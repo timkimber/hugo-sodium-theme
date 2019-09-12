@@ -1,10 +1,35 @@
 {{ $contact := .Site.Data.contact }}
 
+{{ $label_title := "Contact" }}
+{{ if $contact.title }}
+{{ $label_title = $contact.title }}
+{{ end }}
+
+{{ $label_email := "Email" }}
+{{ if $contact.label_email }}
+{{ $label_email = $contact.label_email }}
+{{ end }}
+
+{{ $label_submit := "Submit" }}
+{{ if $contact.label_submit }}
+{{ $label_submit = $contact.label_submit }}
+{{ end }}
+
+{{ $label_name := "Name" }}
+{{ if $contact.label_name }}
+{{ $label_name = $contact.label_name }}
+{{ end }}
+
+{{ $label_message := "Message" }}
+{{ if $contact.label_message }}
+{{ $label_message = $contact.label_message }}
+{{ end }}
+
 <section id="contact" class="contact mt-5 p-3 p-lg-5 p-md-5">
 	<div class="container">
 
 		<center>
-			<h2 class="h2 my-5">Contact</h2>
+			<h2 class="h2 my-5">{{ $label_title }}</h2>
 		</center>
 
 		<form action="https://formspree.io/{{ .Site.Data.config.email }}" method="POST">
@@ -21,7 +46,7 @@
 					{{ end }}
 					{{ if $contact.email }}
 					<div class="mb-3">
-						<div class="text-uppercase text-muted">Email</div>
+						  <div class="text-uppercase text-muted">{{ $label_email }}</div>
 						<div>{{ $contact.email }}</div>
 					 </div>
 					{{ end }}
@@ -36,26 +61,26 @@
 						<div class="row">
 							<div class="col-12 col-lg-6 col-md-6">
 								<div class="form-group">
-									<label>Name</label>
-									<input type="text" name="Name" class="form-control" placeholder="Name">
+									  <label>{{ $label_name }}</label>
+									  <input type="text" name="Name" class="form-control" placeholder="{{ $label_name }}">
 								</div>
 							</div>
 							<div class="col-12 col-lg-6 col-md-6">
 								<div class="form-group">
-									<label>Email</label>
-									<input type="email" name="Email" class="form-control" placeholder="Email">
+									  <label>{{ $label_email }}</label>
+									  <input type="email" name="Email" class="form-control" placeholder="{{ $label_email }}">
 								</div>
 							</div>
 	
 							<div class="col-12">
 								<div class="form-group">
-									<label>Message</label>
-									<textarea placeholder="Message" name="Message" rows="5" class="form-control"></textarea>
+									  <label>{{ $label_message }}</label>
+									  <textarea placeholder="{{ $label_message }}" name="{{ $label_email }}" rows="5" class="form-control"></textarea>
 								</div>
 							</div>
 	
 							<div class="col-12">
-									<button type="submit" class="btn btn-outline-dark">Submit</button>
+									<button type="submit" class="btn btn-outline-dark">{{ $label_submit }}</button>
 							</div>
 	
 						</div>
