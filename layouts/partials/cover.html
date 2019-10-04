@@ -6,7 +6,7 @@
       <div class="">
           <h1 class="h1 text-light">{{ $cover.title }}</h1>
           <p class="text-light sub-heading">{{ $cover.description }}</p>
-          <a href="{{ $cover.button.href }}" class="btn btn-outline-light">{{ $cover.button.text }}</a>      
+          <a {{ if $cover.button.nofollow }}rel="nofollow" {{ end }}href="{{ $cover.button.href }}" class="btn btn-outline-light">{{ $cover.button.text }}</a>      
       </div>
       <!-- <div class="col-12 col-lg-6 col-md-6 col-sm-12"> -->
           <!-- <img src="/images/cover.svg" class="float-right" style="max-width: 100%"> -->
