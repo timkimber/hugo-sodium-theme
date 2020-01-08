@@ -26,3 +26,14 @@ We also come with a pro version that contains many advance features. [Check it o
 ## Useful Links
 
 [Documentation](https://demo.uicard.io/hugo-sodium-pro/documentation/) | [Free Version](https://uicard.io/products/hugo-sodium) | [Pro Version](https://uicard.io/products/hugo-sodium-pro)
+
+## New components
+
+### Page
+
+Allows includes markdown page.
+
+1. Add ``page`` to ``components`` in ``data/config.json``
+2. Create file ``content/page.md``
+
+Example of usage: https://github.com/it-projects-llc/shhvshhshhshh-ustanovka
